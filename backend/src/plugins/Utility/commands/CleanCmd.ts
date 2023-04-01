@@ -216,7 +216,7 @@ export async function cleanCmd(pluginData: GuildPluginData<UtilityPluginType>, a
 }
 
 export const CleanCmd = utilityCmd({
-  trigger: ["clean", "clear"],
+  trigger: ["clean", "clear", "purge"],
   description: "Remove a number of recent messages",
   usage: "!clean 20",
   permission: "can_clean",
