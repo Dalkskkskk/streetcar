@@ -11,7 +11,7 @@ import { utilityCmd } from "../types";
 
 export const AboutCmd = utilityCmd({
   trigger: "about",
-  description: "Show information about Zeppelin's status on the server",
+  description: "Shows information about Streetcar, and it's status on the server",
   permission: "can_about",
 
   async run({ message: msg, pluginData }) {
@@ -83,10 +83,10 @@ export const AboutCmd = utilityCmd({
         .join(" ");
 
       aboutEmbed.fields!.push({
-        name: "Zeppelin supporters 🎉",
+        name: "Global Streetcar Admins",
         value:
-          "These amazing people have supported Zeppelin development by pledging on [Patreon](https://www.patreon.com/zeppelinbot):\n\n" +
-          formattedSupporters,
+          "These people are the current global admin for Streetcar:\n\n" +
+          "<@744140247503339601>",
         inline: false,
       });
     }
