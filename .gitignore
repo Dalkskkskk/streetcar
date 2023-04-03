@@ -1,5 +1,10 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Node template
+
+# streetcar stuff
+.gitpod.yml
+/configs
+
 # Logs
 /logs
 *.log

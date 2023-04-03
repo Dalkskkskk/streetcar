@@ -18,7 +18,7 @@ async function checkGuild(pluginData: GlobalPluginData<GuildAccessMonitorPluginT
   if (!(await pluginData.state.allowedGuilds.isAllowed(guild.id))) {
     // tslint:disable-next-line:no-console
     console.log(`Non-allowed server ${guild.name} (${guild.id}), leaving`);
-    // guild.leave();
+    guild.leave();
   }
 }
 
