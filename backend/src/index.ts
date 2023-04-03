@@ -344,6 +344,9 @@ connect().then(async () => {
         // @ts-expect-error
         const emoji = guildId ? bot.getLoadedGuild(guildId)!.config.success_emoji : undefined;
         channel.send(successMessage(body, emoji));
+        client.user?.setPresence({
+          activities: [{ name: "games and eating ice cream" }],
+        });
       },
 
       sendErrorMessageFn(channel, body) {
