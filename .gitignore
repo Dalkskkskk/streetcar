@@ -4,6 +4,7 @@
 # streetcar stuff
 .gitpod.yml
 /configs
+/streetcartestingshit
 
 # Logs
 /logs
