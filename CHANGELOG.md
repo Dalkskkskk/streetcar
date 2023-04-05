@@ -14,3 +14,11 @@
 ## V1.2.2
 
 - Removed the social media poster plugin.
+
+## V1.2.3 
+
+### Bugfixes
+
+- Fixed the custom status.
+- Fixed the emojis in `!cases`
+- Fixed the error message emoji to show ⚠️, not some other junk that looks like ⚠️.

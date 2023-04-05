@@ -344,9 +344,6 @@ connect().then(async () => {
         // @ts-expect-error
         const emoji = guildId ? bot.getLoadedGuild(guildId)!.config.success_emoji : undefined;
         channel.send(successMessage(body, emoji));
-        client.user?.setPresence({
-          activities: [{ name: "games and eating ice cream" }],
-        });
       },
 
       sendErrorMessageFn(channel, body) {
@@ -361,6 +358,9 @@ connect().then(async () => {
 
   client.once("ready", () => {
     startUptimeCounter();
+    client.user?.setPresence({
+      activities: [{ name: "games and eating ice cream" }],
+    });
   });
 
   client.rest.on(RESTEvents.RateLimited, (data) => {
