@@ -16,7 +16,7 @@ const opts = {
 };
 
 export const ForcebanCmd = modActionsCmd({
-  trigger: "forceban",
+  trigger: ["forceban", "forceyeet"],
   permission: "can_ban",
   description: "Force-ban the specified user, even if they aren't on the server",
 

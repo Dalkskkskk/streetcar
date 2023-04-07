@@ -3,7 +3,7 @@ import { commandTypeHelpers as ct } from "../../../commandTypes";
 import { slowmodeCmd } from "../types";
 
 export const SlowmodeGetCmd = slowmodeCmd({
-  trigger: "slowmode",
+  trigger: ["slowmode", "sm"],
   permission: "can_manage",
   source: "guild",
 

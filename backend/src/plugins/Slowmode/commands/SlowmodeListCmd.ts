@@ -5,7 +5,7 @@ import { errorMessage } from "../../../utils";
 import { slowmodeCmd } from "../types";
 
 export const SlowmodeListCmd = slowmodeCmd({
-  trigger: ["slowmode list", "slowmode l", "slowmodes"],
+  trigger: ["slowmode list", "slowmode l", "slowmodes", "sm list", "sm l"],
   permission: "can_manage",
 
   async run({ message: msg, pluginData }) {

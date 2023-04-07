@@ -8,7 +8,7 @@ import { TimeAndDatePlugin } from "../../TimeAndDate/TimeAndDatePlugin";
 import { remindersCmd } from "../types";
 
 export const RemindCmd = remindersCmd({
-  trigger: ["remind", "remindme", "reminder"],
+  trigger: ["remind", "remindme", "reminder", "r"],
   usage: "!remind 3h Remind me of this in 3 hours please",
   permission: "can_use",
 

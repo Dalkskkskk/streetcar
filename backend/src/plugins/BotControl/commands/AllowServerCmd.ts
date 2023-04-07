@@ -51,6 +51,6 @@ export const AllowServerCmd = botControlCmd({
       );
     }
 
-    sendSuccessMessage(pluginData, msg.channel, "Server is now allowed to use Zeppelin!");
+    sendSuccessMessage(pluginData, msg.channel, "Server is now allowed to use Streetcar!");
   },
 });

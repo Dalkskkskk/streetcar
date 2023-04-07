@@ -9,7 +9,7 @@ import { slowmodeCmd } from "../types";
 import { clearBotSlowmodeFromUserId } from "../util/clearBotSlowmodeFromUserId";
 
 export const SlowmodeClearCmd = slowmodeCmd({
-  trigger: ["slowmode clear", "slowmode c"],
+  trigger: ["slowmode clear", "slowmode c", "sm clear", "sm c"],
   permission: "can_manage",
 
   signature: {

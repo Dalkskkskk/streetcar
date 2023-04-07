@@ -51,6 +51,6 @@ export const AddServerFromInviteCmd = botControlCmd({
       );
     }
 
-    sendSuccessMessage(pluginData, msg.channel, "Server was eligible and is now allowed to use Zeppelin!");
+    sendSuccessMessage(pluginData, msg.channel, "Server was eligible and is now allowed to use Streetcar!");
   },
 });

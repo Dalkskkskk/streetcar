@@ -26,7 +26,7 @@ async function checkGuild(pluginData: GlobalPluginData<GuildAccessMonitorPluginT
  * Global plugin to monitor if Zeppelin is invited to a non-whitelisted server, and leave it
  */
 export const GuildAccessMonitorPlugin = zeppelinGlobalPlugin<GuildAccessMonitorPluginType>()({
-  name: "guild_access_monitor",
+  name: "guild-access-monitor",
   configParser: makeIoTsConfigParser(t.type({})),
 
   events: [

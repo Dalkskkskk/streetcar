@@ -6,7 +6,7 @@ import { reloadChangedGuilds } from "./functions/reloadChangedGuilds";
 import { GuildConfigReloaderPluginType } from "./types";
 
 export const GuildConfigReloaderPlugin = zeppelinGlobalPlugin<GuildConfigReloaderPluginType>()({
-  name: "guild_config_reloader",
+  name: "guild-config-reloader",
   showInDocs: false,
 
   configParser: makeIoTsConfigParser(t.type({})),

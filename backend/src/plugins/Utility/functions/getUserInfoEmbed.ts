@@ -43,9 +43,8 @@ export async function getUserInfoEmbed(
   const timeAndDate = pluginData.getPlugin(TimeAndDatePlugin);
 
   embed.author = {
-    name: `${user.bot ? "Bot" : "User"}:  ${user.tag}`,
+    name: `${user.bot ? "Bot" : "User"}: ${user.tag}`,
   };
-
   const avatarURL = user.displayAvatarURL();
   embed.author.icon_url = avatarURL;
 

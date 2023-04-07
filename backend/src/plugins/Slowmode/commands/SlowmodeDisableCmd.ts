@@ -3,7 +3,7 @@ import { slowmodeCmd } from "../types";
 import { actualDisableSlowmodeCmd } from "../util/actualDisableSlowmodeCmd";
 
 export const SlowmodeDisableCmd = slowmodeCmd({
-  trigger: ["slowmode disable", "slowmode d"],
+  trigger: ["slowmode disable", "slowmode d", "sm disable", "sm d"],
   permission: "can_manage",
 
   signature: {

@@ -8,7 +8,7 @@ import { utilityCmd } from "../types";
 export const VcmoveCmd = utilityCmd({
   trigger: "vcmove",
   description: "Move a member to another voice channel",
-  usage: "!vcmove @Dragory 473223047822704651",
+  usage: "!vcmove @streetcar 473223047822704651",
   permission: "can_vcmove",
 
   signature: {

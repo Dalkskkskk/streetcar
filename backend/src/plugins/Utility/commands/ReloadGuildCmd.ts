@@ -4,7 +4,7 @@ import { utilityCmd } from "../types";
 
 export const ReloadGuildCmd = utilityCmd({
   trigger: "reload_guild",
-  description: "Reload the Zeppelin configuration and all plugins for the server. This can sometimes fix issues.",
+  description: "Reload the Streetcar configuration and all plugins for the server. This can sometimes fix issues.",
   permission: "can_reload_guild",
 
   async run({ message: msg, args, pluginData }) {

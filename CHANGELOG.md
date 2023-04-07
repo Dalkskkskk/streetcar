@@ -22,3 +22,14 @@
 - Fixed the custom status.
 - Fixed the emojis in `!cases`
 - Fixed the error message emoji to show ⚠️, not some other junk that looks like ⚠️.
+
+## V1.3.0
+
+### Features
+
+- Added a description to the following commands: `antiraid clear`, `antiraid`
+- Added the alias `yeet` for the `!ban` command
+- Added the alias `forceyeet` for the `!forceban` command
+- Added the alias `massyeet` for the `!yeet` command.
+- Added the alias `r` for the `!remind` command
+- Added the alias `sm` for every slowmode related command on Streetcar.

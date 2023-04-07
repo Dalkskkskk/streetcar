@@ -6,6 +6,7 @@ import { AutomodPluginType } from "../types";
 
 export const SetAntiraidCmd = guildPluginMessageCommand<AutomodPluginType>()({
   trigger: "antiraid",
+  description: "Displays what the antiraid level is at",
   permission: "can_set_antiraid",
 
   signature: {

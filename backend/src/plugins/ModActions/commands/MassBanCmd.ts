@@ -14,7 +14,7 @@ import { ignoreEvent } from "../functions/ignoreEvent";
 import { IgnoredEventType, modActionsCmd } from "../types";
 
 export const MassbanCmd = modActionsCmd({
-  trigger: "massban",
+  trigger: ["massban", "massyeet"],
   permission: "can_massban",
   description: "Mass-ban a list of user IDs",
 
