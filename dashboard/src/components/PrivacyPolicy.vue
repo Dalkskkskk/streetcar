@@ -1,32 +1,31 @@
 <template>
   <div class="privacy-policy">
     <div class="wrapper">
-      <h1>Zeppelin Privacy Policy</h1>
+      <h1>Streetcar Privacy Policy</h1>
 
-      <h2>Zeppelin overview</h2>
+      <h2>Streetcar overview</h2>
       <p>
-        Zeppelin is a moderation bot for Discord that allows server staff to
-        carry out moderator actions (warn, mute, kick, ban, clean messages, view
-        user information, etc.),
-        keep records of infractions, perform automated actions ("automod", e.g.
-        message filtering), post detailed logs on logging channels, and set up
-        systems such as reaction roles.
+        Streetcar is a moderation bot for Discord cloned from Dragory's Zeppelin,
+        that allows server staff to carry out moderator actions (warn, mute, kick, 
+        ban, clean messages, view user information, etc.), keep records of infractions, 
+        perform automated actions ("automod", e.g. message filtering), post detailed 
+        logs on logging channels, and set up systems such as reaction roles.
         The bot also includes a web dashboard that server administrators can log
         in to through Discord OAuth.
       </p>
       <p>
         The bot's source code is available at
-        <a href="https://github.com/Dragory/ZeppelinBot">
-          https://github.com/Dragory/ZeppelinBot
+        <a href="https://github.com/Dalkskkskk/streetcar">
+          https://github.com/Dalkskkskk/streetcar
         </a>
       </p>
 
       <h2>Stored data</h2>
       <p>
-        When Zeppelin is used by a server, the following categories data can be
+        When Streetcar is used by a server, the following categories data can be
         stored by the bot.
         The specific categories of data saved for each server depends on how the
-        server has configured Zeppelin.
+        server has configured Streetcar.
       </p>
       <ul>
         <li>Recent messages and username/nickname changes of users engaged on
@@ -76,13 +75,6 @@
           Discord OAuth is stored as long as the server uses Zeppelin
         </li>
       </ul>
-
-      <h2>Data access and deletion requests</h2>
-      <p>
-        To request access to personal data stored about you, or to request its
-        deletion, to the extent permitted by GDPR, please send an email to <a
-        href="mailto:contact@mivir.fi">contact@mivir.fi</a>.
-      </p>
     </div></div>
 </template>
 
