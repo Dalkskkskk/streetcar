@@ -73,6 +73,10 @@
           to: '/docs/introduction',
           label: 'Introduction',
         },
+        {
+          to: '/docs/settingup',
+          label: 'Setting up Streetcar',
+        },
       ],
     },
 
