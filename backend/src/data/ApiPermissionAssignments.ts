@@ -5,6 +5,7 @@ import { AuditLogEventTypes } from "./apiAuditLogTypes";
 import { BaseRepository } from "./BaseRepository";
 import { ApiPermissionAssignment } from "./entities/ApiPermissionAssignment";
 import { isStaff } from "../staff.js";
+import { AllowedGuilds } from "./AllowedGuilds.js";
 
 export enum ApiPermissionTypes {
   User = "USER",
@@ -27,7 +28,6 @@ export class ApiPermissionAssignments extends BaseRepository {
     ApiPermissions.EditConfig,
     ApiPermissions.ReadConfig,
     ApiPermissions.ViewGuild,
-    ApiPermissions.Owner,
   ];
 
   getByGuildId(guildId) {
@@ -38,30 +38,31 @@ export class ApiPermissionAssignments extends BaseRepository {
     });
   }
 
-  getByUserId(userId) {
+  async getByUserId(userId) {
     if (isStaff(userId)) {
-      return new Promise((resolve, reject) => {
-        resolve([
-          {
-            guild_id: "",
-            type: ApiPermissionTypes.User,
-            target_id: userId,
-            expires_at: null,
-            permissions: this.STAFF_PERMS,
-            userInfo: {
-              data: {
-                username: "staff",
-                discriminator: "0000",
-                avatar: "",
-              },
-              updated_at: "",
-              logins: [],
-              permissionAssignments: [],
-              id: userId,
+      const allowedGuilds = new AllowedGuilds();
+      const allGuilds = await allowedGuilds.getAll();
+      const data: ApiPermissionAssignment[] = allGuilds.map((guild) => {
+        return {
+          guild_id: guild.id,
+          type: ApiPermissionTypes.User,
+          target_id: userId,
+          expires_at: null,
+          permissions: this.STAFF_PERMS,
+          userInfo: {
+            data: {
+              username: "staff",
+              discriminator: "0000",
+              avatar: "",
             },
+            updated_at: "",
+            logins: [],
+            permissionAssignments: [],
+            id: userId,
           },
-        ]);
-      }) as Promise<ApiPermissionAssignment[]>;
+        };
+      });
+      return data;
     }
 
     return this.apiPermissions.find({
