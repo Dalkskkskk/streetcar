@@ -31,7 +31,7 @@ initDocs(app);
 
 // Default route
 app.get("/", (req, res) => {
-  res.json({ status: "cookies", with: "milk" });
+  res.json({ go: "and", touch: "grass" });
 });
 
 // Error response
