@@ -8,7 +8,7 @@
         <img class="flex-auto w-10 mr-5" src="../../img/logo.png" alt="" aria-hidden="true">
 
         <router-link to="/docs">
-          <h1 class="flex-auto font-semibold">Zeppelin Documentation</h1>
+          <h1 class="flex-auto font-semibold">Streetcar Documentation</h1>
         </router-link>
       </div>
       <div class="flex-1 flex items-center justify-end">
