@@ -16,7 +16,7 @@
           to="/dashboard"
           role="menuitem"
           class="py-1 px-2 rounded hover:bg-gray-700 hidden lg:block">
-          Go to dashboard
+          Dashboard
         </router-link>
         <button class="link-button text-2xl leading-zero lg:hidden" v-on:click="toggleMobileMenu()" aria-hidden="true">
           <Menu />
