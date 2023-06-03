@@ -26,6 +26,10 @@ export class AllowedGuilds extends BaseRepository {
     return this.allowedGuilds.findOne(guildId);
   }
 
+  getAll(): Promise<AllowedGuild[]> {
+    return this.allowedGuilds.createQueryBuilder("allowed_guilds").getMany();
+  }
+  
   getForApiUser(userId) {
     return this.allowedGuilds
       .createQueryBuilder("allowed_guilds")
