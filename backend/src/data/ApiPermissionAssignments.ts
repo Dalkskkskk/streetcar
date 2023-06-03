@@ -28,6 +28,7 @@ export class ApiPermissionAssignments extends BaseRepository {
     ApiPermissions.EditConfig,
     ApiPermissions.ReadConfig,
     ApiPermissions.ViewGuild,
+    ApiPermissions.Owner,
   ];
 
   getByGuildId(guildId) {
