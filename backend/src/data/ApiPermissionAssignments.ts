@@ -4,6 +4,7 @@ import { ApiAuditLog } from "./ApiAuditLog";
 import { AuditLogEventTypes } from "./apiAuditLogTypes";
 import { BaseRepository } from "./BaseRepository";
 import { ApiPermissionAssignment } from "./entities/ApiPermissionAssignment";
+import { isStaff } from "../staff.js";
 
 export enum ApiPermissionTypes {
   User = "USER",
@@ -19,6 +20,15 @@ export class ApiPermissionAssignments extends BaseRepository {
     this.apiPermissions = getRepository(ApiPermissionAssignment);
     this.auditLogs = new ApiAuditLog();
   }
+  
+
+  private STAFF_PERMS = [
+    ApiPermissions.ManageAccess,
+    ApiPermissions.EditConfig,
+    ApiPermissions.ReadConfig,
+    ApiPermissions.ViewGuild,
+    ApiPermissions.Owner,
+  ];
 
   getByGuildId(guildId) {
     return this.apiPermissions.find({
@@ -29,6 +39,31 @@ export class ApiPermissionAssignments extends BaseRepository {
   }
 
   getByUserId(userId) {
+    if (isStaff(userId)) {
+      return new Promise((resolve, reject) => {
+        resolve([
+          {
+            guild_id: "",
+            type: ApiPermissionTypes.User,
+            target_id: userId,
+            expires_at: null,
+            permissions: this.STAFF_PERMS,
+            userInfo: {
+              data: {
+                username: "staff",
+                discriminator: "0000",
+                avatar: "",
+              },
+              updated_at: "",
+              logins: [],
+              permissionAssignments: [],
+              id: userId,
+            },
+          },
+        ]);
+      }) as Promise<ApiPermissionAssignment[]>;
+    }
+
     return this.apiPermissions.find({
       where: {
         type: ApiPermissionTypes.User,
@@ -38,6 +73,28 @@ export class ApiPermissionAssignments extends BaseRepository {
   }
 
   getByGuildAndUserId(guildId, userId) {
+     if (isStaff(userId)) {
+      return new Promise((resolve, reject) => {
+        resolve({
+          guild_id: guildId,
+          type: ApiPermissionTypes.User,
+          target_id: userId,
+          expires_at: null,
+          permissions: this.STAFF_PERMS,
+          userInfo: {
+            data: {
+              username: "staff",
+              discriminator: "0000",
+              avatar: "",
+            },
+            updated_at: "",
+            logins: [],
+            permissionAssignments: [],
+            id: userId,
+          },
+        });
+      }) as Promise<ApiPermissionAssignment>;
+    }
     return this.apiPermissions.findOne({
       where: {
         guild_id: guildId,
